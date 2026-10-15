@@ -1,6 +1,6 @@
 # 🇧🇷 Brazil Work Trip · 31 Oct 2026 → 16–21 Jan 2027
 
-**0/12 done · 0%**
+**0/22 done · 0%**
 
 ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
@@ -24,8 +24,8 @@ Nothing overdue. 🎉
 | --- | --- | --- | --- |
 | [1 · This week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/1) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/6 | Sun 18 Oct |
 | [2 · Next week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/2) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/7 | Sun 25 Oct |
-| [3 · Before you fly](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/3) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/1 | Fri 30 Oct |
-| [4 · In Brazil](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/4) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/0 | Thu 21 Jan |
+| [3 · Before you fly](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/3) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/9 | Fri 30 Oct |
+| [4 · In Brazil](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/4) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/3 | Thu 21 Jan |
 
 ## ✅ Recently done
 
