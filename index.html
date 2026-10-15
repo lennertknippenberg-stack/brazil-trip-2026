@@ -46,6 +46,9 @@ section{background:var(--card);border:1px solid var(--line);border-radius:14px;p
 .late .chk{border-color:var(--bad)} .late .tag,.late .d{color:var(--bad)}
 .soon .chk{border-color:var(--warn)} .soon .tag,.soon .d{color:var(--warn)}
 .busy{opacity:.5;pointer-events:none}
+.toast{position:sticky;top:10px;z-index:5;margin-top:12px;padding:10px 14px;border-radius:10px;background:var(--ok);color:#fff;font-weight:600}
+.toast.bad{background:var(--bad)}
+[hidden]{display:none!important}
 footer{color:var(--mute);font-size:13px;margin-top:24px;text-align:center}
 footer a{color:inherit}
 </style>
@@ -72,7 +75,9 @@ footer a{color:inherit}
   <p class="err" id="tokErr"></p>
 </div>
 
-<div class="panel" id="addPanel" hidden>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<div class="panel" id="addPanel">
   <h2>Add a task</h2>
   <form id="addForm" class="row">
     <input id="newTitle" type="text" placeholder="Buy travel adapter at the airport" required>
@@ -121,6 +126,12 @@ async function load() {
     milestones = ms.sort((a, b) => (a.due_on || "").localeCompare(b.due_on || ""));
     render();
   } catch (e) {
+    if (token && /^401/.test(e.message)) {
+      token = null;
+      try { localStorage.removeItem("trip-token"); } catch (x) {}
+      setConnected(); toast("Your saved token expired or was revoked. Connect again to tick tasks off.", true);
+      return load();
+    }
     $("grid").innerHTML = '<p class="err">Couldn\'t load tasks (' + esc(e.message) + '). Try Refresh in a minute.</p>';
   }
 }
@@ -153,34 +164,51 @@ function render() {
         '<a class="t" target="_blank" rel="noopener" href="' + i.html_url + '">' + esc(i.title) + '</a>' +
         '<span class="d">' + fmt(dl) + '</span>' + (tag ? '<span class="tag">' + tag + '</span>' : "");
       const chk = row.querySelector(".chk");
-      chk.disabled = !token;
-      chk.title = token ? (isDone ? "Reopen" : "Mark done") : "Connect to tick off";
-      chk.addEventListener("click", () => toggle(i, row));
+      chk.title = isDone ? "Reopen" : "Mark done";
+      chk.addEventListener("click", () => toggle(i));
       sec.appendChild(row);
     });
     grid.appendChild(sec);
   });
 }
 
-async function toggle(i, row) {
-  if (!token) { show(true); return; }
-  row.classList.add("busy");
+let pending = 0;
+async function toggle(i) {
+  if (!token) {
+    toast("Connect this browser once to tick tasks off. It takes 2 minutes. Steps below.", true);
+    show(true); $("connect").scrollIntoView({behavior: "smooth", block: "center"});
+    return;
+  }
+  const before = i.state;
+  i.state = before === "closed" ? "open" : "closed";
+  pending++; render();
   try {
-    const upd = await gh("PATCH", "/issues/" + i.number, {state: i.state === "closed" ? "open" : "closed"});
-    Object.assign(i, upd); render(); bumpHero();
-  } catch (e) { row.classList.remove("busy"); alertBox(e); }
+    const upd = await gh("PATCH", "/issues/" + i.number, {state: i.state});
+    Object.assign(i, upd);
+    toast(i.state === "closed" ? "Done: " + i.title : "Reopened: " + i.title);
+    bumpHero();
+  } catch (e) {
+    i.state = before; alertBox(e);
+  } finally { pending--; render(); }
+}
+
+let toastTimer;
+function toast(msg, bad) {
+  const t = $("toast"); t.textContent = msg; t.className = "toast" + (bad ? " bad" : ""); t.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 5000);
 }
 
 function alertBox(e) {
-  const msg = /401|403/.test(e.message) ? "Your token can't edit issues. Check it has Issues: Read and write on brazil-trip-2026." : "That didn't work (" + e.message + "). Try again.";
-  $("addErr").textContent = msg; $("addPanel").hidden = false;
+  toast(/401|403|404/.test(e.message)
+    ? "Your token can't edit tasks. Make a new one with Issues: Read and write on brazil-trip-2026, then Connect again."
+    : "That didn't save (" + e.message + "). Try again.", true);
 }
 
 function bumpHero() { setTimeout(() => { $("hero").src = "status.svg?t=" + Date.now(); }, 90000); }
 
 function show(open) { $("connect").hidden = !open; }
 function setConnected() {
-  $("connectBtn").hidden = !!token; $("addPanel").hidden = !token; $("disconnect").hidden = !token;
+  $("connectBtn").hidden = !!token; $("disconnect").hidden = !token;
 }
 
 $("connectBtn").addEventListener("click", () => show($("connect").hidden));
@@ -212,6 +240,10 @@ $("addForm").addEventListener("submit", async e => {
   const title = $("newTitle").value.trim(), date = $("newDate").value, ms = +$("newMs").value;
   if (!title) { $("addErr").textContent = "Give the task a name."; return; }
   if (!date) { $("addErr").textContent = "Pick a deadline."; return; }
+  if (!token) {
+    $("addErr").textContent = "Connect this browser first (steps above), then add the task.";
+    show(true); $("connect").scrollIntoView({behavior: "smooth", block: "center"}); return;
+  }
   try {
     const body = "**Deadline:** " + date + "\n**Deliverable:** " + title + "\n**Time:** -\n\nAdded from the dashboard. Close this issue when it's done.";
     const created = await gh("POST", "/issues", {title, body, milestone: ms || undefined});
@@ -223,7 +255,7 @@ $("addForm").addEventListener("submit", async e => {
 const d = new Date(); d.setDate(d.getDate() + 1); $("newDate").value = d.toISOString().slice(0, 10);
 setConnected();
 load();
-setInterval(load, 120000);
+setInterval(() => { if (!pending) load(); }, 120000);
 })();
 </script>
 </body>
