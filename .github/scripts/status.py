@@ -165,7 +165,7 @@ def render_svg(today, done, total, overdue_n, week_n, milestones, next_items):
         late = d < today
         col = "#cf222e" if late else ("#bf8700" if d <= today + dt.timedelta(days=1) else "#57606a")
         cxk, cyk = 60 + (k % 2) * 550, ny + 30 + (k // 2) * 40
-        title = i["title"] if len(i["title"]) <= 52 else i["title"][:50] + "…"
+        title = i["title"] if len(i["title"]) <= 44 else i["title"][:42].rstrip(" ,:") + "…"
         out += [f'<circle cx="{cxk + 7}" cy="{cyk - 5}" r="7" fill="{col}"/>',
                 f'<text class="mute" x="{cxk + 24}" y="{cyk}" font-size="14" font-weight="600">{"LATE " if late else ""}{esc(d.strftime("%d %b"))}</text>',
                 f'<text class="ink" x="{cxk + 104}" y="{cyk}" font-size="15">#{i["number"]} {esc(title)}</text>']
