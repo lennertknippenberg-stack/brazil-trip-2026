@@ -1,10 +1,10 @@
 # 🇧🇷 Brazil Work Trip · 31 Oct 2026 → 16–21 Jan 2027
 
-<img src="status.svg" alt="Trip status: 0 of 32 done" width="100%">
+<img src="status.svg" alt="Trip status: 2 of 32 done" width="100%">
 
-**0/32 done · 0%**
+**2/32 done · 6%**
 
-⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
 ✈️ **16 days to departure** (Sat 31 Oct)
 
@@ -14,24 +14,25 @@ Nothing overdue. 🎉
 
 ## 👉 Next up
 
-- [ ] [Medellin list: take, store, sell, give away, throw out](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/3) · **Thu 15 Oct**
 - [ ] [Landlord: notice given and deposit return agreed](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/2) · **Thu 15 Oct**
 - [ ] [Rio stay booked: 27 Dec to 20 Jan, Botafogo/Flamengo](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/1) · **Thu 15 Oct**
 - [ ] [Panama: yes or no](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/4) · **Fri 16 Oct**
 - [ ] [Ask Francisco: south tour or Rio?](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/6) · **Sun 18 Oct**
+- [ ] [Clients or employer OK with working from Brazil](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/8) · **Tue 20 Oct**
 
 ## 📊 Phases
 
 | Phase | Progress | Done | Due |
 | --- | --- | --- | --- |
-| [1 · This week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/1) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/6 | Sun 18 Oct |
-| [2 · Next week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/2) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/7 | Sun 25 Oct |
+| [1 · This week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/1) | 🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜ | 2/6 | Sun 18 Oct |
+| [2 · Next week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/2) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/8 | Sun 25 Oct |
 | [3 · Before you fly](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/3) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/9 | Fri 30 Oct |
 | [4 · In Brazil](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/4) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/10 | Thu 21 Jan |
 
 ## ✅ Recently done
 
-Nothing yet. Close your first issue!
+- [x] Storage place for the store pile sorted
+- [x] Medellin list: take, store, sell, give away, throw out
 
 ---
 
