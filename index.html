@@ -46,6 +46,17 @@ section{background:var(--card);border:1px solid var(--line);border-radius:14px;p
 .late .chk{border-color:var(--bad)} .late .tag,.late .d{color:var(--bad)}
 .soon .chk{border-color:var(--warn)} .soon .tag,.soon .d{color:var(--warn)}
 .busy{opacity:.5;pointer-events:none}
+.task{cursor:pointer;user-select:none}
+.task:focus-visible{outline:2px solid var(--acc)}
+.chk{display:inline-flex;align-items:center;justify-content:center}
+.open{color:var(--mute);text-decoration:none;margin-left:4px;padding:0 4px;border-radius:4px}
+.open:hover{background:var(--line);color:var(--ink)}
+.connect{border:2px solid var(--acc)}
+.steps{display:grid;gap:10px;margin:8px 0}
+.step{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+.step>b{width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center}
+.go{display:inline-block;background:var(--acc);color:#fff;font-weight:700;border-radius:8px;padding:7px 14px;text-decoration:none}
+small{color:var(--mute)}
 .toast{position:sticky;top:10px;z-index:5;margin-top:12px;padding:10px 14px;border-radius:10px;background:var(--ok);color:#fff;font-weight:600}
 .toast.bad{background:var(--bad)}
 [hidden]{display:none!important}
@@ -59,19 +70,17 @@ footer a{color:inherit}
 
 <div class="bar">
   <div class="prog"><b id="count">…</b> <span class="note" id="sub"></span><div class="pb"><i id="pbar" style="width:0"></i></div></div>
-  <div class="row"><a href="https://github.com/users/lennertknippenberg-stack/projects/1" target="_blank" rel="noopener" style="background:var(--ok);color:#fff;border-radius:8px;padding:7px 12px;text-decoration:none;font-weight:600">Open the board</a><button id="refresh" type="button">Refresh</button><button id="connectBtn" type="button">Connect to tick off</button></div>
+  <div class="row"><button id="refresh" type="button">Refresh</button><button id="connectBtn" type="button">Connect to tick off</button></div>
 </div>
 
-<div class="panel" id="connect" hidden>
-  <h2>Connect your GitHub once</h2>
-  <p class="note">To tick tasks and add new ones from this page, paste a GitHub token that can only edit issues in this repo. It stays in this browser only and is sent only to api.github.com.</p>
-  <ol class="note">
-    <li>Open <a id="tokLink" target="_blank" rel="noopener" href="https://github.com/settings/personal-access-tokens/new">GitHub → new fine-grained token</a>.</li>
-    <li>Repository access: <b>Only select repositories</b> → <b>brazil-trip-2026</b>.</li>
-    <li>Permissions → Repository → <b>Issues: Read and write</b>. Expiration: after 31 Jan 2027.</li>
-    <li>Generate, copy, paste here.</li>
-  </ol>
-  <div class="row"><input id="tok" type="password" autocomplete="off" placeholder="github_pat_…"><button class="primary" id="saveTok" type="button">Save</button></div>
+<div class="panel connect" id="connect" hidden>
+  <h2>👆 One time only: let this page tick tasks off (1 minute)</h2>
+  <div class="steps">
+    <div class="step"><b>1</b><span><a class="go" target="_blank" rel="noopener" href="https://github.com/settings/tokens/new?scopes=public_repo&amp;description=Brazil%20trip%20dashboard">Create my key</a><br><small>Opens GitHub with everything pre-filled.</small></span></div>
+    <div class="step"><b>2</b><span>Scroll down, click the green <b>Generate token</b>, then <b>copy</b> the key.<br><small>Expiration: pick <b>Custom</b> → 31 Jan 2027 if you like.</small></span></div>
+    <div class="step"><b>3</b><span>Paste it here:<div class="row" style="margin-top:6px"><input id="tok" type="password" autocomplete="off" placeholder="ghp_…"><button class="primary" id="saveTok" type="button">Save</button></div></span></div>
+  </div>
+  <p class="note">The key stays in this browser only and is sent only to GitHub. Do this once on each device.</p>
   <p class="err" id="tokErr"></p>
 </div>
 
@@ -160,12 +169,14 @@ function render() {
       const row = document.createElement("div");
       row.className = "task " + (isDone ? "done" : late ? "late" : soon ? "soon" : "");
       const tag = isDone ? "done" : late ? "overdue" : soon ? (+dl === +today ? "today" : "tomorrow") : "";
-      row.innerHTML = '<button class="chk" type="button" aria-label="Mark done">' + (isDone ? "✓" : "") + '</button>' +
-        '<a class="t" target="_blank" rel="noopener" href="' + i.html_url + '">' + esc(i.title) + '</a>' +
-        '<span class="d">' + fmt(dl) + '</span>' + (tag ? '<span class="tag">' + tag + '</span>' : "");
-      const chk = row.querySelector(".chk");
-      chk.title = isDone ? "Reopen" : "Mark done";
-      chk.addEventListener("click", () => toggle(i));
+      row.innerHTML = '<span class="chk" aria-hidden="true">' + (isDone ? "✓" : "") + '</span>' +
+        '<span class="t">' + esc(i.title) + '</span>' +
+        '<span class="d">' + fmt(dl) + ' <a class="open" target="_blank" rel="noopener" href="' + i.html_url + '" title="Details on GitHub">↗</a></span>' +
+        (tag ? '<span class="tag">' + tag + '</span>' : "");
+      row.setAttribute("role", "button"); row.tabIndex = 0;
+      row.title = isDone ? "Click to reopen" : "Click to mark done";
+      row.addEventListener("click", e => { if (e.target.closest("a")) return; toggle(i); });
+      row.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(i); } });
       sec.appendChild(row);
     });
     grid.appendChild(sec);
@@ -208,7 +219,7 @@ function bumpHero() { setTimeout(() => { $("hero").src = "status.svg?t=" + Date.
 
 function show(open) { $("connect").hidden = !open; }
 function setConnected() {
-  $("connectBtn").hidden = !!token; $("disconnect").hidden = !token;
+  $("connectBtn").hidden = !!token; $("disconnect").hidden = !token; $("connect").hidden = !!token;
 }
 
 $("connectBtn").addEventListener("click", () => show($("connect").hidden));
