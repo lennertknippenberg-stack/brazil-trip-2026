@@ -31,11 +31,11 @@ jobs:
         run: python .github/scripts/status.py
       - name: Commit README
         run: |
-          git add -N status.svg 2>/dev/null || true
-          if ! git diff --quiet README.md status.svg; then
+          git add -N status.svg index.html 2>/dev/null || true
+          if ! git diff --quiet README.md status.svg index.html; then
             git config user.name "trip-bot"
             git config user.email "trip-bot@users.noreply.github.com"
-            git add README.md status.svg
+            git add README.md status.svg index.html
             git commit -m "Update trip status"
             git push
           fi

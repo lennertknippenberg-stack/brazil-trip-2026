@@ -258,4 +258,57 @@ lines += [
 
 with open("README.md", "w", encoding="utf-8") as f:
     f.write("\n".join(lines))
+
+# --- index.html (GitHub Pages) ---------------------------------------------
+by_ms = {}
+for i in issues:
+    by_ms.setdefault((i["milestone"] or {}).get("title", "Other"), []).append(i)
+sections = []
+for m in milestones:
+    items = sorted(by_ms.get(m["title"], []), key=lambda i: (deadline(i) or dt.date.max, i["number"]))
+    t = m["open_issues"] + m["closed_issues"]
+    rows = []
+    for i in items:
+        d = deadline(i)
+        is_done = i["state"] == "closed"
+        late = not is_done and d and d < today
+        soon = not is_done and d and today <= d <= today + dt.timedelta(days=1)
+        cls = "done" if is_done else ("late" if late else ("soon" if soon else ""))
+        tag = "done" if is_done else ("overdue" if late else ("today" if d == today else ("tomorrow" if soon else "")))
+        rows.append(
+            f'<a class="task {cls}" href="{i["html_url"]}"><span class="box">{"✓" if is_done else ""}</span>'
+            f'<span class="t">{esc(i["title"])}</span>'
+            f'{f"<span class=tag>{tag}</span>" if tag else ""}'
+            f'<span class="d">{esc(d.strftime("%d %b")) if d else ""}</span></a>')
+    pctm = round(100 * m["closed_issues"] / t) if t else 0
+    sections.append(
+        f'<section><div class="sh"><h2>{esc(m["title"])}</h2><span>{m["closed_issues"]}/{t}</span></div>'
+        f'<div class="pb"><i style="width:{pctm}%"></i></div>{"".join(rows)}</section>')
+html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Brazil Work Trip</title>
+<meta http-equiv="refresh" content="900">
+<style>
+:root{{--bg:#f6f8fa;--card:#fff;--ink:#1f2328;--mute:#656d76;--line:#d0d7de;--ok:#1a7f37;--warn:#bf8700;--bad:#cf222e}}
+@media (prefers-color-scheme:dark){{:root{{--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--mute:#8d96a0;--line:#30363d}}}}
+*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}}
+main{{max-width:1100px;margin:0 auto;padding:24px 16px 48px}}img.hero{{width:100%;border-radius:16px;border:1px solid var(--line);display:block}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:20px}}
+section{{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}}
+.sh{{display:flex;justify-content:space-between;align-items:baseline}}h2{{font-size:16px;margin:0}}.sh span{{color:var(--mute);font-weight:600}}
+.pb{{height:8px;background:var(--line);border-radius:4px;margin:10px 0 8px;overflow:hidden}}.pb i{{display:block;height:100%;background:var(--ok)}}
+.task{{display:grid;grid-template-columns:22px 1fr auto;gap:2px 8px;align-items:start;padding:8px 6px;border-radius:8px;color:var(--ink);text-decoration:none}}
+.task:hover{{background:var(--bg)}}.box{{width:18px;height:18px;border:2px solid var(--line);border-radius:5px;font-size:12px;line-height:14px;text-align:center;margin-top:2px}}
+.t{{grid-column:2}}.d{{grid-column:3;grid-row:1;color:var(--mute);font-size:13px;white-space:nowrap}}
+.tag{{grid-column:2;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}}
+.done .t{{text-decoration:line-through;color:var(--mute)}}.done .box{{background:var(--ok);border-color:var(--ok);color:#fff}}.done .tag{{color:var(--ok)}}
+.late .box{{border-color:var(--bad)}}.late .tag,.late .d{{color:var(--bad)}}.soon .box{{border-color:var(--warn)}}.soon .tag,.soon .d{{color:var(--warn)}}
+footer{{color:var(--mute);font-size:13px;margin-top:24px;text-align:center}}footer a{{color:inherit}}
+</style></head><body><main>
+<img class="hero" src="status.svg?v={dt.datetime.now(tz).strftime('%Y%m%d%H%M')}" alt="Trip status: {done} of {total} done">
+<div class="grid">{"".join(sections)}</div>
+<footer>Tap a task to open it on GitHub, then close the issue when it's done. This page updates itself within a few minutes.<br>
+Updated {dt.datetime.now(tz).strftime('%d %b %H:%M')} · <a href="https://github.com/{REPO}">GitHub repo</a></footer>
+</main></body></html>"""
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html)
 print(f"{done}/{total} done, {len(overdue)} overdue")
