@@ -4,9 +4,9 @@
 <text class="ink" x="60" y="70" font-size="34" font-weight="700">Brazil Work Trip</text>
 <text class="mute" x="60" y="102" font-size="17">Medellín → Florianópolis → Rio de Janeiro → Brussels · 31 Oct 2026 – Jan 2027</text>
 <circle cx="1075" cy="92" r="52" fill="none" stroke-width="14" class="line" stroke="#d0d7de"/>
-<circle cx="1075" cy="92" r="52" fill="none" stroke="#2da44e" stroke-width="14" stroke-linecap="round" stroke-dasharray="29.7 326.7" transform="rotate(-90 1075 92)"/>
-<text class="ink" x="1075" y="96" font-size="26" font-weight="700" text-anchor="middle">9%</text>
-<text class="mute" x="1075" y="118" font-size="13" text-anchor="middle">3/33 done</text>
+<circle cx="1075" cy="92" r="52" fill="none" stroke="#2da44e" stroke-width="14" stroke-linecap="round" stroke-dasharray="39.6 326.7" transform="rotate(-90 1075 92)"/>
+<text class="ink" x="1075" y="96" font-size="26" font-weight="700" text-anchor="middle">12%</text>
+<text class="mute" x="1075" y="118" font-size="13" text-anchor="middle">4/33 done</text>
 <rect class="card" x="60" y="130" width="280" height="76" rx="12"/>
 <rect x="60" y="130" width="6" height="76" rx="3" fill="#0969da"/>
 <text class="ink" x="84" y="166" font-size="26" font-weight="700">16 days</text>
@@ -62,8 +62,8 @@
 <text class="ink" x="353" y="480" font-size="16" font-weight="700">2 · Next week</text>
 <text class="mute" x="353" y="502" font-size="13">due Sun 25 Oct · upcoming</text>
 <rect class="track" x="353" y="518" width="219" height="12" rx="6"/>
-<rect x="353" y="518" width="0" height="12" rx="6" fill="#57606a"/>
-<text class="ink" x="353" y="552" font-size="15" font-weight="700">0/8</text>
+<rect x="353" y="518" width="27" height="12" rx="6" fill="#57606a"/>
+<text class="ink" x="353" y="552" font-size="15" font-weight="700">1/8</text>
 <rect class="card" x="610" y="448" width="255" height="118" rx="12"/>
 <text class="ink" x="628" y="480" font-size="16" font-weight="700">3 · Before you fly</text>
 <text class="mute" x="628" y="502" font-size="13">due Fri 30 Oct · upcoming</text>

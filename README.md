@@ -1,8 +1,8 @@
 # 🇧🇷 Brazil Work Trip · 31 Oct 2026 → 16–21 Jan 2027
 
-<img src="status.svg" alt="Trip status: 3 of 33 done" width="100%">
+<img src="status.svg" alt="Trip status: 4 of 33 done" width="100%">
 
-**3/33 done · 9%**
+**4/33 done · 12%**
 
 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
@@ -25,12 +25,13 @@ Nothing overdue. 🎉
 | Phase | Progress | Done | Due |
 | --- | --- | --- | --- |
 | [1 · This week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/1) | 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ | 3/6 | Sun 18 Oct |
-| [2 · Next week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/2) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/8 | Sun 25 Oct |
+| [2 · Next week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/2) | 🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 1/8 | Sun 25 Oct |
 | [3 · Before you fly](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/3) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/9 | Fri 30 Oct |
 | [4 · In Brazil](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/4) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/10 | Thu 21 Jan |
 
 ## ✅ Recently done
 
+- [x] Medellin subscriptions cancelled
 - [x] Landlord: notice given and deposit return agreed
 - [x] Storage place for the store pile sorted
 - [x] Medellin list: take, store, sell, give away, throw out
