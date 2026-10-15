@@ -1,6 +1,6 @@
 # 🇧🇷 Brazil Work Trip · 31 Oct 2026 → 16–21 Jan 2027
 
-**0/4 done · 0%**
+**0/8 done · 0%**
 
 ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
@@ -16,13 +16,14 @@ Nothing overdue. 🎉
 - [ ] [Landlord: notice given and deposit return agreed](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/2) · **Thu 15 Oct**
 - [ ] [Rio stay booked: 27 Dec to 20 Jan, Botafogo/Flamengo](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/1) · **Thu 15 Oct**
 - [ ] [Panama: yes or no](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/4) · **Fri 16 Oct**
+- [ ] [Ask Francisco: south tour or Rio?](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/6) · **Sun 18 Oct**
 
 ## 📊 Phases
 
 | Phase | Progress | Done | Due |
 | --- | --- | --- | --- |
 | [1 · This week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/1) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/6 | Sun 18 Oct |
-| [2 · Next week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/2) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/0 | Sun 25 Oct |
+| [2 · Next week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/2) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/4 | Sun 25 Oct |
 | [3 · Before you fly](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/3) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/0 | Fri 30 Oct |
 | [4 · In Brazil](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/4) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/0 | Thu 21 Jan |
 
