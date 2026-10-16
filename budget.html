@@ -60,11 +60,11 @@ a{color:var(--acc)}
 <main>
 <nav><a href="./">✅ Tasks</a><a class="on" href="budget.html">💶 Budget</a></nav>
 <h1>Brazil budget · 31 Oct 2026 → 15 Jan 2027</h1>
-<div class="mute">76 nights · ceiling <b>$7,500</b> all-in, per person · prices as displayed on 16 Oct 2026, not booked</div>
+<div class="mute">76 nights (return date still to be decided) · ceiling <b>$7,500</b> all-in, per person · prices as displayed on 16 Oct 2026, not booked</div>
 
 <div class="card controls" id="controls">
   <div><div class="lab">People sharing</div><div class="seg" data-k="people"><button data-v="1">Solo</button><button data-v="2">2 people</button><button data-v="3">3 people</button></div></div>
-  <div><div class="lab">Rio</div><div class="seg" data-k="rio"><button data-v="14">14 nights (26 Dec–9 Jan)</button><button data-v="5">5 nights (NYE only)</button><button data-v="0">No Rio</button></div></div>
+  <div><div class="lab">Rio</div><div class="seg" data-k="rio"><button data-v="14">Rio city 14 nights</button><button data-v="nit">Niterói base 14 nights</button><button data-v="5">Rio 5 nights (NYE)</button><button data-v="0">No Rio</button></div></div>
   <div><div class="lab">Stays</div><div class="seg" data-k="pick"><button data-v="smart">Best value picks</button><button data-v="avg">Average of your wishlist</button></div></div>
   <div><div class="lab">Rental car (south)</div><div class="seg" data-k="car"><button data-v="none">No car</button><button data-v="sel">8 weekend days</button><button data-v="full">Full month Floripa</button></div></div>
 </div>
@@ -92,7 +92,7 @@ a{color:var(--acc)}
 
 <h2>Daily living costs (excluding stay)</h2>
 <div class="card scroll"><table id="living"></table>
-<small>Insurance is counted once in the trip total ($330 reserve), not in daily living. Rio adds about $10/day for pricier restaurants and transport (estimate).</small></div>
+<small>Insurance is counted once in the trip total ($330 reserve), not in daily living. Rio adds about $15/day for pricier restaurants and Uber (estimate).</small></div>
 
 <h2>Rental car</h2>
 <div class="card scroll"><table id="cartable"></table>
@@ -123,16 +123,19 @@ const STAY = {
     avg:{1:1046,2:1586,3:2626}, smart:{1:892,2:1145,3:1959},
     note:{avg:"Average of your 10 Curitiba listings", smart:{1:"Centro studio $892", 2:"Portão 2BR $1,145", 3:"Mercês 3BR $1,959"}}},
   RIO: {name:"Rio de Janeiro", color:"var(--c3)",
-    avg:{1:1194,2:2030,3:2866}, smart:{1:902,2:1190,3:1800},
-    note:{avg:"Avg of your private apartments (Niterói ×2, Grajaú, Lapa) $1,194 solo; 2–3 people estimated", smart:{1:"Downtown Niterói studio $902", 2:"Niterói renovated apt, repriced for 2 (est.)", 3:"3-bedroom estimate"}}},
-  AFTER: {name:"Niterói / Paraty", color:"var(--c4)", perNight:{1:60,2:40,3:36}}
+    avg:{1:2126,2:3600,3:4800}, smart:{1:1354,2:3200,3:4000},
+    note:{avg:"Avg of your Rio-city private apartments (Grajaú, Lapa, Alto Leblon, Gávea) $2,126 solo; 2–3 people estimated", smart:{1:"Grajaú apartment $1,354 (cheapest Rio-city private apartment)", 2:"2-bedroom Rio apartment over NYE, estimate", 3:"3-bedroom Rio apartment over NYE, estimate"}}},
+  NIT: {name:"Niterói (Rio base)", color:"var(--c3)",
+    avg:{1:855,2:1300,3:1800}, smart:{1:902,2:1190,3:1700},
+    note:{avg:"Avg of your Niterói listings ($673–$990) solo; 2–3 people estimated", smart:{1:"Downtown Niterói studio $902", 2:"Niterói renovated apt, repriced for 2 (estimate)", 3:"3-bedroom Niterói estimate"}}},
+  AFTER: {name:"Niterói / Paraty", color:"var(--c4)", perNight:{1:75,2:50,3:45}}
 };
 const LIVE = { // per person per day, excluding stay and insurance (estimates from your monthly allowances / 30)
   1:{Groceries:11.0, "Batch cook":7.3, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0},
   2:{Groceries:11.0, "Batch cook":3.3, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0},
   3:{Groceries:11.0, "Batch cook":2.4, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0}
 };
-const RIO_UPLIFT = 10;
+const RIO_UPLIFT = 15;
 const CAR = {
   none:{label:"No car", days:0, rental:0, fuel:0, park:0, replaced:0},
   sel:{label:"8 weekend days", days:8, rental:280, fuel:60, park:40, replaced:80},
@@ -141,6 +144,7 @@ const CAR = {
 const ROUTES = {
   14:[["FLN","31 Oct","28 Nov",28],["CWB","28 Nov","26 Dec",28],["RIO","26 Dec","9 Jan",14],["AFTER","9 Jan","15 Jan",6]],
   5:[["FLN","31 Oct","28 Nov",28],["CWB","28 Nov","29 Dec",31],["RIO","29 Dec","3 Jan",5],["AFTER","3 Jan","15 Jan",12]],
+  nit:[["FLN","31 Oct","28 Nov",28],["CWB","28 Nov","26 Dec",28],["NIT","26 Dec","9 Jan",14],["AFTER","9 Jan","15 Jan",6]],
   0:[["FLN","31 Oct","28 Nov",28],["CWB","28 Nov","15 Jan",48]]
 };
 const S = {people:2, rio:14, pick:"smart", car:"none"};
@@ -152,7 +156,7 @@ const tag = t => '<span class="tag ' + ({q:"t-q",d:"t-d",e:"t-e"})[t] + '">' + (
 function stayCost(code, nights, p, pick){
   const s = STAY[code];
   if (code === "AFTER") return s.perNight[p] * nights;
-  if (code === "RIO") { const total14 = s[pick][p] / p; const nyePremium = nights < 14 ? 1.25 : 1; return total14 / 14 * nights * nyePremium; }
+  if (code === "RIO" || code === "NIT") { const total14 = s[pick][p] / p; const nyePremium = nights < 14 ? 1.4 : 1; return total14 / 14 * nights * nyePremium; }
   return s[pick][p] / p / 28 * nights;
 }
 function livingPerDay(p){ return Object.values(LIVE[p]).reduce((a,b)=>a+b,0); }
@@ -161,10 +165,10 @@ function carShare(c, p){ const k = CAR[c]; return Math.max(0, k.rental + k.fuel 
 function compute(st){
   const p = +st.people, route = ROUTES[st.rio];
   let stay = 0, rioNights = 0;
-  route.forEach(([c,,,n]) => { stay += stayCost(c, n, p, st.pick); if (c === "RIO") rioNights = n; });
+  route.forEach(([c,,,n]) => { stay += stayCost(c, n, p, st.pick); if (c === "RIO" || c === "NIT") rioNights = n; });
   const days = 77;
   const living = livingPerDay(p) * days + RIO_UPLIFT * rioNights;
-  const flights = 580 + 850 + (st.rio > 0 ? 200 : 0);
+  const flights = 580 + 850 + (st.rio != 0 ? 200 : 0);
   const buses = 180;
   const car = carShare(st.car, p);
   const ins = 330, cont = 600;
@@ -189,13 +193,13 @@ function render(){
 
   const tot = r.route.reduce((a,x)=>a+x[3],0);
   document.getElementById("timeline").innerHTML = r.route.map(([c,a,b,n]) => '<div style="flex:' + n + ';background:' + STAY[c].color + '">' + STAY[c].name + '<span style="font-weight:400">' + a + '–' + b + ' · ' + n + 'n</span></div>').join("");
-  document.getElementById("routeNote").textContent = tot + " nights total. " + (S.rio == 0 ? "No Rio: Curitiba until the flight home (check the $850 quote from Curitiba)." : S.rio == 5 ? "Short Rio: NYE week only (+25% NYE premium, estimate), then cheaper Niterói or Paraty until the flight home." : "Rio for your wishlist dates, then 6 cheaper nights in Niterói or Paraty before flying home 15 Jan.");
+  document.getElementById("routeNote").textContent = tot + " nights total. " + (S.rio == 0 ? "No Rio: Curitiba until the flight home (check the $850 quote from Curitiba)." : S.rio == 5 ? "Short Rio: NYE nights only at a +40% NYE premium (estimate), then Niterói or Paraty until the flight home." : S.rio === "nit" ? "Niterói base: 20 min by ferry to Rio, much cheaper. For NYE you watch Icaraí fireworks or take a late ferry from Copacabana." : "Rio city for your wishlist dates (pricey over NYE), then 6 nights in Niterói or Paraty before flying home. Return date still to be decided.");
 
   const lp = livingPerDay(r.p);
   document.getElementById("cities").innerHTML = r.route.map(([c,a,b,n]) => {
-    const st = stayCost(c, n, r.p, S.pick), sd = st / n, ld = lp + (c === "RIO" ? RIO_UPLIFT : 0);
+    const st = stayCost(c, n, r.p, S.pick), sd = st / n, ld = lp + (c === "RIO" || c === "NIT" ? RIO_UPLIFT : 0);
     const src = c === "AFTER" ? "Estimate: budget studio or room, " + usd(STAY.AFTER.perNight[r.p]) + "/night per person" : (S.pick === "avg" ? STAY[c].note.avg : STAY[c].note.smart[r.p]);
-    const t = c === "AFTER" || (c === "RIO" && r.p > 1) || (c==="RIO" && n<14) ? "e" : "d";
+    const t = c === "AFTER" || ((c === "RIO" || c === "NIT") && (r.p > 1 || n < 14)) ? "e" : "d";
     return '<div class="card city" style="border-top:5px solid ' + STAY[c].color + '"><h3>' + STAY[c].name + '</h3><small>' + a + ' – ' + b + ' · ' + n + ' nights</small>' +
       '<div class="kpi"><div><small>per day</small><b>' + usd(sd + ld) + '</b></div><div><small>per month</small><b>' + usd((sd + ld) * 30) + '</b></div></div>' +
       '<div class="row"><span>Stay</span><span>' + usd(sd) + '/day · ' + usd(st) + ' total</span></div>' +
@@ -212,10 +216,10 @@ function render(){
     Object.entries(CAR).filter(([k])=>k!=="none").map(([k,c]) => { const net = c.rental + c.fuel + c.park - c.replaced;
       return '<tr' + (S.car===k?' class="pick"':'') + '><td>' + c.label + ' ' + tag("e") + '</td><td class="n">' + usd(c.rental) + '</td><td class="n">' + usd(c.fuel) + '</td><td class="n">' + usd(c.park) + '</td><td class="n">−' + usd(c.replaced) + '</td><td class="n"><b>' + usd(net) + '</b></td><td class="n">' + usd(net) + '</td><td class="n">' + usd(net/2) + '</td><td class="n">' + usd(net/3) + '</td></tr>'; }).join("");
 
-  const rows = [[14,"Rio 14 nights"],[5,"Rio 5 nights"],[0,"No Rio"]];
+  const rows = [[14,"Rio city 14 nights"],["nit","Niterói base 14 nights"],[5,"Rio 5 nights (NYE)"],[0,"No Rio"]];
   let m = '<tr><th>Scenario (' + (S.pick==="smart"?"best value picks":"wishlist averages") + ', ' + CAR[S.car].label.toLowerCase() + ')</th><th class="n">Solo</th><th class="n">2 people</th><th class="n">3 people</th></tr>';
   rows.forEach(([rv,lab]) => { m += '<tr><td>' + lab + '</td>' + [1,2,3].map(p => { const t = compute({people:p, rio:rv, pick:S.pick, car:S.car}).total, d = LIMIT - t;
-    return '<td class="n" style="color:' + (d>=0?"var(--ok)":"var(--bad)") + ';font-weight:' + (p==S.people&&rv==S.rio?800:500) + '">' + usd(t) + '<br><small>' + (d>=0?"−":"+") + usd(Math.abs(d)) + '</small></td>'; }).join("") + '</tr>'; });
+    return '<td class="n" style="color:' + (d>=0?"var(--ok)":"var(--bad)") + ';font-weight:' + (p==S.people&&String(rv)===String(S.rio)?800:500) + '">' + usd(t) + '<br><small>' + (d>=0?"−":"+") + usd(Math.abs(d)) + '</small></td>'; }).join("") + '</tr>'; });
   document.getElementById("matrix").innerHTML = m;
 
   const SL = [
@@ -236,11 +240,13 @@ function render(){
   document.getElementById("shortlist").innerHTML = '<tr><th>Place</th><th>Listing</th><th>Bedrooms</th><th>Displayed dates</th><th class="n">Displayed price</th><th>Why</th></tr>' +
     SL.map(x => '<tr><td>' + x[0] + '</td><td>' + x[1] + '</td><td>' + x[2] + '</td><td>' + x[3] + '</td><td class="n">' + usd(x[4]) + ' ' + tag("d") + '</td><td>' + x[5] + '</td></tr>').join("");
 
-  const best = compute({people:2, rio:14, pick:"smart", car:"none"}).total, solo = compute({people:1, rio:0, pick:"smart", car:"none"}).total, short2 = compute({people:2, rio:5, pick:"smart", car:"none"}).total;
+  const T = (p, rio) => compute({people:p, rio, pick:"smart", car:"none"}).total;
+  const line = (lab, t) => '<li>' + lab + ': <b style="color:' + (t <= LIMIT ? "var(--ok)" : "var(--bad)") + '">' + usd(t) + '</b> ' + (t <= LIMIT ? "fits" : "over by " + usd(t - LIMIT)) + '</li>';
   document.getElementById("reco").innerHTML =
-    '<p><b>Solo does not fit $7,500 in any scenario</b> (cheapest solo, no Rio: ' + usd(solo) + '). The stay is the problem, not the food.</p>' +
-    '<p><b>With one friend sharing</b> (own bedroom each), Rio for 14 nights fits on best value picks: <b>' + usd(best) + '</b>. Short Rio (NYE only) gives you more room: <b>' + usd(short2) + '</b>.</p>' +
-    '<p><b>Suggested plan:</b> Floripa Estreito or Centro 2BR → Curitiba Portão 2BR → Rio/Niterói for NYE → Niterói or Paraty until 15 Jan. Skip the full-month car; rent for weekends only if 2–3 people split it.</p>' +
+    '<p><b>Solo does not fit $7,500 in any scenario</b> (cheapest solo, no Rio: ' + usd(T(1,0)) + '). The stay is the problem, not the food.</p>' +
+    '<p><b>Sharing with one friend</b> (own bedroom each, best value picks):</p><ul>' +
+    line("Rio city 14 nights", T(2,14)) + line("Niterói base 14 nights", T(2,"nit")) + line("Rio 5 nights, NYE only", T(2,5)) + line("No Rio", T(2,0)) + '</ul>' +
+    '<p><b>Suggested plan:</b> Floripa 2BR (Estreito or Centro) → Curitiba Portão 2BR → <b>Niterói as your Rio base</b> over NYE (20 min ferry, Copacabana within reach) → fly home. Rio city itself is only worth it if a friend shares and you accept the NYE price. Skip the full-month car; rent for weekends only if 2–3 people split it.</p>' +
     '<p class="mute">Before booking: reprice every listing for your exact dates and guest count, confirm separate bedrooms and a desk, and verify that both flight quotes ($580 out, $850 home) include a checked bag.</p>';
 }
 
