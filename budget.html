@@ -199,7 +199,7 @@ function render(){
 
   const tot = r.route.reduce((a,x)=>a+x[3],0);
   document.getElementById("timeline").innerHTML = r.route.map(([c,a,b,n]) => '<div style="flex:' + n + ';background:' + STAY[c].color + '">' + STAY[c].name + '<span style="font-weight:400">' + a + '–' + b + ' · ' + n + 'n</span></div>').join("");
-  document.getElementById("routeNote").textContent = tot + " nights total. " + ({0:"No Rio: Curitiba until you leave, short flight to São Paulo for the flight home.", w7nye:"One week in Rio over NYE (6 of 7 nights at NYE prices), then cheaper Niterói, Paraty or back south.", w7after:"Christmas and NYE in Curitiba, then one quieter week in Rio after NYE at normal high-season prices.", 14:"Two weeks in Rio city, including the NYE week.", nit:"Two weeks with Niterói as your base: 20 min by ferry to Rio, much cheaper. NYE at Icaraí or a late ferry from Copacabana."})[S.rio] + " Return date still to be decided.");
+  document.getElementById("routeNote").textContent = tot + " nights total. " + ({0:"No Rio: Curitiba until you leave, short flight to São Paulo for the flight home.", w7nye:"One week in Rio over NYE (6 of 7 nights at NYE prices), then cheaper Niterói, Paraty or back south.", w7after:"Christmas and NYE in Curitiba, then one quieter week in Rio after NYE at normal high-season prices.", 14:"Two weeks in Rio city, including the NYE week.", nit:"Two weeks with Niterói as your base: 20 min by ferry to Rio, much cheaper. NYE at Icaraí or a late ferry from Copacabana."})[S.rio] + " Return date still to be decided.";
 
   const lp = livingPerDay(r.p);
   document.getElementById("cities").innerHTML = r.route.map(([c,a,b,n,nye]) => {
