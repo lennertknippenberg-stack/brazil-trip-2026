@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brazil Budget</title>
+<style>
+:root{--bg:#f6f8fa;--card:#fff;--ink:#1f2328;--mute:#656d76;--line:#d0d7de;--ok:#1a7f37;--warn:#bf8700;--bad:#cf222e;--acc:#0969da;
+--c1:#0969da;--c2:#1a7f37;--c3:#bf8700;--c4:#8250df;--c5:#cf222e;--c6:#57606a;--c7:#d4a72c}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--card:#161b22;--ink:#e6edf3;--mute:#8d96a0;--line:#30363d;--acc:#4493f8}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:20px 16px 48px}
+nav{display:flex;gap:6px;margin-bottom:16px}
+nav a{padding:7px 14px;border-radius:999px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card);font-weight:600}
+nav a.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+h1{font-size:28px;margin:0}
+h2{font-size:18px;margin:28px 0 10px}
+.mute{color:var(--mute)} small{color:var(--mute)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+.seg{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.seg button{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer}
+.seg button.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.lab{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}
+.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,2fr);gap:16px;margin-top:16px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.big{font-size:44px;font-weight:800;line-height:1.1}
+.verdict{display:inline-block;margin-top:8px;padding:5px 10px;border-radius:8px;font-weight:700;color:#fff}
+.stack{display:flex;height:34px;border-radius:8px;overflow:hidden;margin:14px 0 6px;position:relative;background:var(--line)}
+.stack i{display:block;height:100%}
+.limit{position:relative;height:16px;font-size:12px;color:var(--bad);font-weight:700}
+.limit span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 16px;margin-top:10px}
+.lg{display:flex;align-items:center;gap:8px;font-size:14px}
+.lg b{margin-left:auto;font-variant-numeric:tabular-nums}
+.sw{width:12px;height:12px;border-radius:3px;flex:none}
+.cities{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.city h3{margin:0;font-size:17px}
+.kpi{display:flex;gap:16px;margin:8px 0}
+.kpi div{flex:1}.kpi b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
+.row{display:flex;justify-content:space-between;gap:8px;font-size:14px;padding:3px 0;border-top:1px dashed var(--line)}
+.row:first-of-type{border-top:0}
+.row span:last-child{font-variant-numeric:tabular-nums}
+.timeline{display:flex;height:46px;border-radius:10px;overflow:hidden;margin-top:6px}
+.timeline div{display:flex;flex-direction:column;justify-content:center;padding:0 8px;color:#fff;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.scroll{overflow-x:auto}
+.tag{font-size:11px;font-weight:700;padding:2px 6px;border-radius:5px;white-space:nowrap}
+.t-q{background:#ddf4ff;color:#0550ae}.t-d{background:#dafbe1;color:#116329}.t-e{background:#fff8c5;color:#7d4e00}
+@media (prefers-color-scheme:dark){.t-q{background:#0c2d6b;color:#a5d6ff}.t-d{background:#04260f;color:#7ee787}.t-e{background:#3b2300;color:#f2cc60}}
+.pick{background:color-mix(in srgb,var(--ok) 10%,transparent)}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="./">✅ Tasks</a><a class="on" href="budget.html">💶 Budget</a></nav>
+<h1>Brazil budget · 31 Oct 2026 → 15 Jan 2027</h1>
+<div class="mute">76 nights · ceiling <b>$7,500</b> all-in, per person · prices as displayed on 16 Oct 2026, not booked</div>
+
+<div class="card controls" id="controls">
+  <div><div class="lab">People sharing</div><div class="seg" data-k="people"><button data-v="1">Solo</button><button data-v="2">2 people</button><button data-v="3">3 people</button></div></div>
+  <div><div class="lab">Rio</div><div class="seg" data-k="rio"><button data-v="14">14 nights (26 Dec–9 Jan)</button><button data-v="5">5 nights (NYE only)</button><button data-v="0">No Rio</button></div></div>
+  <div><div class="lab">Stays</div><div class="seg" data-k="pick"><button data-v="smart">Best value picks</button><button data-v="avg">Average of your wishlist</button></div></div>
+  <div><div class="lab">Rental car (south)</div><div class="seg" data-k="car"><button data-v="none">No car</button><button data-v="sel">8 weekend days</button><button data-v="full">Full month Floripa</button></div></div>
+</div>
+
+<div class="hero">
+  <div class="card">
+    <div class="lab">Your total (your share)</div>
+    <div class="big" id="total">$0</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="mute" style="margin-top:10px" id="perday"></div>
+  </div>
+  <div class="card">
+    <div class="lab">Where the money goes</div>
+    <div class="stack" id="stack"></div>
+    <div class="limit" id="limit"></div>
+    <div class="legend" id="legend"></div>
+  </div>
+</div>
+
+<h2>Route for this scenario</h2>
+<div class="card"><div class="timeline" id="timeline"></div><div class="mute" style="margin-top:8px;font-size:13px" id="routeNote"></div></div>
+
+<h2>Per place: per day and per month (your share)</h2>
+<div class="cities" id="cities"></div>
+
+<h2>Daily living costs (excluding stay)</h2>
+<div class="card scroll"><table id="living"></table>
+<small>Insurance is counted once in the trip total ($330 reserve), not in daily living. Rio adds about $10/day for pricier restaurants and transport (estimate).</small></div>
+
+<h2>Rental car</h2>
+<div class="card scroll"><table id="cartable"></table>
+<small>Refundable deposit (card hold) of roughly R$1,500–3,000 is not spending. "Net" already subtracts the Uber and bus trips the car replaces, so nothing is double-counted.</small></div>
+
+<h2>All scenarios at a glance (your share)</h2>
+<div class="card scroll"><table id="matrix"></table></div>
+
+<h2>Shortlist from your wishlists</h2>
+<div class="card scroll"><table id="shortlist"></table>
+<small>All accommodation prices are <span class="tag t-d">displayed</span> wishlist prices for other dates or guest counts. Reprice for your exact dates, check fees, bedroom layout (beds ≠ bedrooms), desk and wifi before booking.</small></div>
+
+<h2>Recommendation</h2>
+<div class="card" id="reco"></div>
+
+<p class="mute" style="font-size:13px;margin-top:24px">Labels: <span class="tag t-q">quote</span> your own price quote · <span class="tag t-d">displayed</span> listing price shown on 16 Oct · <span class="tag t-e">estimate</span> my estimate. Wishlists: <a href="https://www.airbnb.com/wishlists/viewonly/7d38da87-2250-4603-af6b-870f61207eef">Floripa</a> · <a href="https://www.airbnb.com/wishlists/viewonly/ed2e19c7-6da7-4df8-b98d-3da1fd41910b">Curitiba</a> · <a href="https://www.airbnb.com/wishlists/viewonly/3573ee48-bf62-4eb3-b7a7-f71264230213">Rio</a></p>
+</main>
+
+<script>
+(function(){
+const LIMIT = 7500;
+// Stay prices: Floripa & Curitiba = displayed "monthly" (28 nights) per whole place; Rio = displayed 14-night total, 1 guest.
+const STAY = {
+  FLN: {name:"Florianópolis", color:"var(--c2)",
+    avg:{1:1973,2:1795,3:2644}, smart:{1:1822,2:1324,3:1894},
+    note:{avg:"Average of your 13 Floripa listings (1BR 2, 2BR 5, 3BR 6)", smart:{1:"Campeche duplex loft $1,822", 2:"Estreito 2BR ocean view $1,324", 3:"Modern 3BR $1,894"}}},
+  CWB: {name:"Curitiba", color:"var(--c1)",
+    avg:{1:1046,2:1586,3:2626}, smart:{1:892,2:1145,3:1959},
+    note:{avg:"Average of your 10 Curitiba listings", smart:{1:"Centro studio $892", 2:"Portão 2BR $1,145", 3:"Mercês 3BR $1,959"}}},
+  RIO: {name:"Rio de Janeiro", color:"var(--c3)",
+    avg:{1:1194,2:2030,3:2866}, smart:{1:902,2:1190,3:1800},
+    note:{avg:"Avg of your private apartments (Niterói ×2, Grajaú, Lapa) $1,194 solo; 2–3 people estimated", smart:{1:"Downtown Niterói studio $902", 2:"Niterói renovated apt, repriced for 2 (est.)", 3:"3-bedroom estimate"}}},
+  AFTER: {name:"Niterói / Paraty", color:"var(--c4)", perNight:{1:60,2:40,3:36}}
+};
+const LIVE = { // per person per day, excluding stay and insurance (estimates from your monthly allowances / 30)
+  1:{Groceries:11.0, "Batch cook":7.3, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0},
+  2:{Groceries:11.0, "Batch cook":3.3, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0},
+  3:{Groceries:11.0, "Batch cook":2.4, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0}
+};
+const RIO_UPLIFT = 10;
+const CAR = {
+  none:{label:"No car", days:0, rental:0, fuel:0, park:0, replaced:0},
+  sel:{label:"8 weekend days", days:8, rental:280, fuel:60, park:40, replaced:80},
+  full:{label:"Full month Floripa (28 days)", days:28, rental:784, fuel:150, park:60, replaced:160}
+};
+const ROUTES = {
+  14:[["FLN","31 Oct","28 Nov",28],["CWB","28 Nov","26 Dec",28],["RIO","26 Dec","9 Jan",14],["AFTER","9 Jan","15 Jan",6]],
+  5:[["FLN","31 Oct","28 Nov",28],["CWB","28 Nov","29 Dec",31],["RIO","29 Dec","3 Jan",5],["AFTER","3 Jan","15 Jan",12]],
+  0:[["FLN","31 Oct","28 Nov",28],["CWB","28 Nov","15 Jan",48]]
+};
+const S = {people:2, rio:14, pick:"smart", car:"none"};
+try { Object.assign(S, JSON.parse(localStorage.getItem("trip-budget") || "{}")); } catch(e){}
+
+const usd = v => "$" + Math.round(v).toLocaleString("en-US");
+const tag = t => '<span class="tag ' + ({q:"t-q",d:"t-d",e:"t-e"})[t] + '">' + ({q:"quote",d:"displayed",e:"estimate"})[t] + '</span>';
+
+function stayCost(code, nights, p, pick){
+  const s = STAY[code];
+  if (code === "AFTER") return s.perNight[p] * nights;
+  if (code === "RIO") { const total14 = s[pick][p] / p; const nyePremium = nights < 14 ? 1.25 : 1; return total14 / 14 * nights * nyePremium; }
+  return s[pick][p] / p / 28 * nights;
+}
+function livingPerDay(p){ return Object.values(LIVE[p]).reduce((a,b)=>a+b,0); }
+function carShare(c, p){ const k = CAR[c]; return Math.max(0, k.rental + k.fuel + k.park - k.replaced) / p; }
+
+function compute(st){
+  const p = +st.people, route = ROUTES[st.rio];
+  let stay = 0, rioNights = 0;
+  route.forEach(([c,,,n]) => { stay += stayCost(c, n, p, st.pick); if (c === "RIO") rioNights = n; });
+  const days = 77;
+  const living = livingPerDay(p) * days + RIO_UPLIFT * rioNights;
+  const flights = 580 + 850 + (st.rio > 0 ? 200 : 0);
+  const buses = 180;
+  const car = carShare(st.car, p);
+  const ins = 330, cont = 600;
+  const parts = [["Accommodation", stay, "var(--c1)"], ["Food, cook & daily living", living, "var(--c2)"], ["Flights", flights, "var(--c3)"],
+    ["Buses & transfers", buses, "var(--c6)"], ["Rental car (net)", car, "var(--c4)"], ["Insurance", ins, "var(--c7)"], ["Contingency", cont, "var(--c5)"]];
+  return {parts, total: parts.reduce((a,x)=>a+x[1],0), p, route};
+}
+
+function render(){
+  document.querySelectorAll(".seg").forEach(seg => seg.querySelectorAll("button").forEach(b => b.classList.toggle("on", String(S[seg.dataset.k]) === b.dataset.v)));
+  try { localStorage.setItem("trip-budget", JSON.stringify(S)); } catch(e){}
+  const r = compute(S);
+  document.getElementById("total").textContent = usd(r.total);
+  const diff = LIMIT - r.total, v = document.getElementById("verdict");
+  v.textContent = diff >= 0 ? usd(diff) + " under the $7,500 ceiling" : usd(-diff) + " over the $7,500 ceiling";
+  v.style.background = diff >= 0 ? (diff < 300 ? "var(--warn)" : "var(--ok)") : "var(--bad)";
+  document.getElementById("perday").textContent = "≈ " + usd(r.total / 77) + " per day · ≈ " + usd(r.total / 77 * 30) + " per month, everything included";
+  const scale = Math.max(r.total, LIMIT) * 1.04;
+  document.getElementById("stack").innerHTML = r.parts.filter(x=>x[1]>0).map(x => '<i title="' + x[0] + ': ' + usd(x[1]) + '" style="width:' + (100 * x[1] / scale) + '%;background:' + x[2] + '"></i>').join("");
+  document.getElementById("limit").innerHTML = '<span style="left:' + (100 * LIMIT / scale) + '%">▲ $7,500 ceiling</span>';
+  document.getElementById("legend").innerHTML = r.parts.map(x => '<div class="lg"><span class="sw" style="background:' + x[2] + '"></span>' + x[0] + '<b>' + usd(x[1]) + '</b></div>').join("");
+
+  const tot = r.route.reduce((a,x)=>a+x[3],0);
+  document.getElementById("timeline").innerHTML = r.route.map(([c,a,b,n]) => '<div style="flex:' + n + ';background:' + STAY[c].color + '">' + STAY[c].name + '<span style="font-weight:400">' + a + '–' + b + ' · ' + n + 'n</span></div>').join("");
+  document.getElementById("routeNote").textContent = tot + " nights total. " + (S.rio == 0 ? "No Rio: Curitiba until the flight home (check the $850 quote from Curitiba)." : S.rio == 5 ? "Short Rio: NYE week only (+25% NYE premium, estimate), then cheaper Niterói or Paraty until the flight home." : "Rio for your wishlist dates, then 6 cheaper nights in Niterói or Paraty before flying home 15 Jan.");
+
+  const lp = livingPerDay(r.p);
+  document.getElementById("cities").innerHTML = r.route.map(([c,a,b,n]) => {
+    const st = stayCost(c, n, r.p, S.pick), sd = st / n, ld = lp + (c === "RIO" ? RIO_UPLIFT : 0);
+    const src = c === "AFTER" ? "Estimate: budget studio or room, " + usd(STAY.AFTER.perNight[r.p]) + "/night per person" : (S.pick === "avg" ? STAY[c].note.avg : STAY[c].note.smart[r.p]);
+    const t = c === "AFTER" || (c === "RIO" && r.p > 1) || (c==="RIO" && n<14) ? "e" : "d";
+    return '<div class="card city" style="border-top:5px solid ' + STAY[c].color + '"><h3>' + STAY[c].name + '</h3><small>' + a + ' – ' + b + ' · ' + n + ' nights</small>' +
+      '<div class="kpi"><div><small>per day</small><b>' + usd(sd + ld) + '</b></div><div><small>per month</small><b>' + usd((sd + ld) * 30) + '</b></div></div>' +
+      '<div class="row"><span>Stay</span><span>' + usd(sd) + '/day · ' + usd(st) + ' total</span></div>' +
+      '<div class="row"><span>Living</span><span>' + usd(ld) + '/day · ' + usd(ld * n) + ' total</span></div>' +
+      '<div class="row"><span>Your share of stay</span><span>' + tag(t) + '</span></div><small>' + src + '</small></div>';
+  }).join("");
+
+  const L = LIVE[r.p];
+  document.getElementById("living").innerHTML = '<tr><th>Category</th><th class="n">Per day</th><th class="n">Per month</th><th class="n">77 days</th><th>Basis</th></tr>' +
+    Object.entries(L).map(([k,v]) => '<tr><td>' + k + '</td><td class="n">' + usd(v) + '</td><td class="n">' + usd(v*30) + '</td><td class="n">' + usd(v*77) + '</td><td>' + (k === "Batch cook" ? tag("e") + ' weekly cook, split ' + r.p + ' way' + (r.p>1?'s':'') + ' (Curitiba cook ad: R$250/day)' : tag("e") + ' your allowance') + '</td></tr>').join("") +
+    '<tr><td><b>Total living</b></td><td class="n"><b>' + usd(lp) + '</b></td><td class="n"><b>' + usd(lp*30) + '</b></td><td class="n"><b>' + usd(lp*77) + '</b></td><td></td></tr>';
+
+  document.getElementById("cartable").innerHTML = '<tr><th>Option</th><th class="n">Rental</th><th class="n">Fuel</th><th class="n">Parking/tolls</th><th class="n">Replaces</th><th class="n">Net total</th><th class="n">Solo</th><th class="n">2 people</th><th class="n">3 people</th></tr>' +
+    Object.entries(CAR).filter(([k])=>k!=="none").map(([k,c]) => { const net = c.rental + c.fuel + c.park - c.replaced;
+      return '<tr' + (S.car===k?' class="pick"':'') + '><td>' + c.label + ' ' + tag("e") + '</td><td class="n">' + usd(c.rental) + '</td><td class="n">' + usd(c.fuel) + '</td><td class="n">' + usd(c.park) + '</td><td class="n">−' + usd(c.replaced) + '</td><td class="n"><b>' + usd(net) + '</b></td><td class="n">' + usd(net) + '</td><td class="n">' + usd(net/2) + '</td><td class="n">' + usd(net/3) + '</td></tr>'; }).join("");
+
+  const rows = [[14,"Rio 14 nights"],[5,"Rio 5 nights"],[0,"No Rio"]];
+  let m = '<tr><th>Scenario (' + (S.pick==="smart"?"best value picks":"wishlist averages") + ', ' + CAR[S.car].label.toLowerCase() + ')</th><th class="n">Solo</th><th class="n">2 people</th><th class="n">3 people</th></tr>';
+  rows.forEach(([rv,lab]) => { m += '<tr><td>' + lab + '</td>' + [1,2,3].map(p => { const t = compute({people:p, rio:rv, pick:S.pick, car:S.car}).total, d = LIMIT - t;
+    return '<td class="n" style="color:' + (d>=0?"var(--ok)":"var(--bad)") + ';font-weight:' + (p==S.people&&rv==S.rio?800:500) + '">' + usd(t) + '<br><small>' + (d>=0?"−":"+") + usd(Math.abs(d)) + '</small></td>'; }).join("") + '</tr>'; });
+  document.getElementById("matrix").innerHTML = m;
+
+  const SL = [
+    ["Florianópolis","Estreito, 2BR ocean view","2","Nov 8–Dec 6",1324,"Best value for 2 · mainland side, bridge to the island"],
+    ["Florianópolis","Centro, renovated 2BR, AC, garage","2","Nov 15–Dec 13",1530,"Walkable, AC, garage for a car"],
+    ["Florianópolis","Modern, cozy 3BR (area to check)","3","Nov 24–Dec 22",1894,"Best value for 3"],
+    ["Florianópolis","Centro #CA28, partial sea view","3","Nov 4–Dec 2",1919,"Walkable, dining nearby"],
+    ["Florianópolis","Campeche duplex loft","1","Oct 17–Nov 14",1822,"Best solo pick, beach side"],
+    ["Curitiba","Portão 2BR, quiet street","2","Nov 9–Dec 7",1145,"Best value for 2"],
+    ["Curitiba","Mercês 3BR near centre","3","Nov 4–Dec 2",1959,"Best value for 3"],
+    ["Curitiba","Centro studio","1","Nov 15–Dec 13",892,"Cheapest solo"],
+    ["Curitiba","7TH721 studio, pool + gym","1","Nov 29–Dec 27",932,"Solo with gym in the building"],
+    ["Rio / Niterói","Downtown Niterói studio","studio","26 Dec–9 Jan",902,"Cheapest private apartment · 20 min ferry to Rio"],
+    ["Rio / Niterói","Cozy renovated Niterói apt (3 beds)","check","26 Dec–9 Jan",990,"Check bedroom count before sharing"],
+    ["Rio","Grajaú apt, kitchen, AC, wifi","1+","26 Dec–9 Jan",1354,"Rio city, metro to Copacabana for NYE"],
+    ["Rio","Heart of Lapa apt (2 beds)","check","26 Dec–9 Jan",1531,"Central, lively; check bedrooms and noise"]
+  ];
+  document.getElementById("shortlist").innerHTML = '<tr><th>Place</th><th>Listing</th><th>Bedrooms</th><th>Displayed dates</th><th class="n">Displayed price</th><th>Why</th></tr>' +
+    SL.map(x => '<tr><td>' + x[0] + '</td><td>' + x[1] + '</td><td>' + x[2] + '</td><td>' + x[3] + '</td><td class="n">' + usd(x[4]) + ' ' + tag("d") + '</td><td>' + x[5] + '</td></tr>').join("");
+
+  const best = compute({people:2, rio:14, pick:"smart", car:"none"}).total, solo = compute({people:1, rio:0, pick:"smart", car:"none"}).total, short2 = compute({people:2, rio:5, pick:"smart", car:"none"}).total;
+  document.getElementById("reco").innerHTML =
+    '<p><b>Solo does not fit $7,500 in any scenario</b> (cheapest solo, no Rio: ' + usd(solo) + '). The stay is the problem, not the food.</p>' +
+    '<p><b>With one friend sharing</b> (own bedroom each), Rio for 14 nights fits on best value picks: <b>' + usd(best) + '</b>. Short Rio (NYE only) gives you more room: <b>' + usd(short2) + '</b>.</p>' +
+    '<p><b>Suggested plan:</b> Floripa Estreito or Centro 2BR → Curitiba Portão 2BR → Rio/Niterói for NYE → Niterói or Paraty until 15 Jan. Skip the full-month car; rent for weekends only if 2–3 people split it.</p>' +
+    '<p class="mute">Before booking: reprice every listing for your exact dates and guest count, confirm separate bedrooms and a desk, and verify that both flight quotes ($580 out, $850 home) include a checked bag.</p>';
+}
+
+document.querySelectorAll(".seg").forEach(seg => seg.addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; S[seg.dataset.k] = isNaN(+b.dataset.v) ? b.dataset.v : +b.dataset.v; render(); }));
+render();
+})();
+</script>
+</body>
+</html>
