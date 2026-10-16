@@ -131,9 +131,9 @@ const STAY = {
   AFTER: {name:"Niterói / Paraty", color:"var(--c4)", perNight:{1:75,2:50,3:45}}
 };
 const LIVE = { // per person per day, excluding stay and insurance (estimates from your monthly allowances / 30)
-  1:{Groceries:11.0, "Batch cook":7.3, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0},
-  2:{Groceries:11.0, "Batch cook":3.3, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0},
-  3:{Groceries:11.0, "Batch cook":2.4, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM, laundry, basics":1.7, "Activities":4.0}
+  1:{Groceries:11.0, "Batch cook":7.3, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM (eSIM)":0.4, "Laundry & basics":1.3, "Activities":4.0},
+  2:{Groceries:11.0, "Batch cook":3.3, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM (eSIM)":0.4, "Laundry & basics":1.3, "Activities":4.0},
+  3:{Groceries:11.0, "Batch cook":2.4, "Restaurants & cafés":6.7, "Uber & local":4.0, Gym:1.3, "SIM (eSIM)":0.4, "Laundry & basics":1.3, "Activities":4.0}
 };
 const RIO_UPLIFT = 15;
 const CAR = {
@@ -209,7 +209,7 @@ function render(){
 
   const L = LIVE[r.p];
   document.getElementById("living").innerHTML = '<tr><th>Category</th><th class="n">Per day</th><th class="n">Per month</th><th class="n">77 days</th><th>Basis</th></tr>' +
-    Object.entries(L).map(([k,v]) => '<tr><td>' + k + '</td><td class="n">' + usd(v) + '</td><td class="n">' + usd(v*30) + '</td><td class="n">' + usd(v*77) + '</td><td>' + (k === "Batch cook" ? tag("e") + ' weekly cook, split ' + r.p + ' way' + (r.p>1?'s':'') + ' (Curitiba cook ad: R$250/day)' : tag("e") + ' your allowance') + '</td></tr>').join("") +
+    Object.entries(L).map(([k,v]) => '<tr><td>' + k + '</td><td class="n">' + usd(v) + '</td><td class="n">' + usd(v*30) + '</td><td class="n">' + usd(v*77) + '</td><td>' + (k === "SIM (eSIM)" ? tag("q") + ' $12/month, your price' : k === "Batch cook" ? tag("e") + ' weekly cook, split ' + r.p + ' way' + (r.p>1?'s':'') + ' (Curitiba cook ad: R$250/day)' : tag("e") + ' your allowance') + '</td></tr>').join("") +
     '<tr><td><b>Total living</b></td><td class="n"><b>' + usd(lp) + '</b></td><td class="n"><b>' + usd(lp*30) + '</b></td><td class="n"><b>' + usd(lp*77) + '</b></td><td></td></tr>';
 
   document.getElementById("cartable").innerHTML = '<tr><th>Option</th><th class="n">Rental</th><th class="n">Fuel</th><th class="n">Parking/tolls</th><th class="n">Replaces</th><th class="n">Net total</th><th class="n">Solo</th><th class="n">2 people</th><th class="n">3 people</th></tr>' +
