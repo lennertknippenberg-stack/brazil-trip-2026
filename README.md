@@ -6,19 +6,20 @@
 
 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
-✈️ **11 days to departure** (Sat 31 Oct)
+✈️ **10 days to departure** (Sat 31 Oct)
 
 ## ⏰ Overdue
 
 - [ ] [Rio stay booked: 27 Dec to 20 Jan, Botafogo/Flamengo](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/1) · was due Thu 15 Oct
+- [ ] [Travel insurance bought (30 Oct to 21 Jan)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/7) · was due Tue 20 Oct
 
 ## 👉 Next up
 
-- [ ] [Travel insurance bought (30 Oct to 21 Jan)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/7) · **Tue 20 Oct**
 - [ ] [Flight Medellin to Florianopolis booked (30/31 Oct, with a bag)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/9) · **Wed 21 Oct**
 - [ ] [Decide: EMART light, Rode arm, Neewer desk pole (take, store or sell)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/33) · **Sun 25 Oct**
 - [ ] [Plug adapter bought (type N/C)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/13) · **Sun 25 Oct**
 - [ ] [Sell / give-away pile done](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/11) · **Sun 25 Oct**
+- [ ] [Floripa stay booked: 31 Oct to 27 Dec](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/10) · **Sun 25 Oct**
 
 ## 📊 Phases
 
@@ -41,4 +42,4 @@
 
 **How it works:** every task is an issue. Close it when it's done. This page updates itself every morning and whenever an issue changes.
 
-📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 20 Oct 10:37 (Bogota)
+📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 21 Oct 10:54 (Bogota)

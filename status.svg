@@ -9,15 +9,15 @@
 <text class="mute" x="1075" y="118" font-size="13" text-anchor="middle">8/34 done</text>
 <rect class="card" x="60" y="130" width="280" height="76" rx="12"/>
 <rect x="60" y="130" width="6" height="76" rx="3" fill="#0969da"/>
-<text class="ink" x="84" y="166" font-size="26" font-weight="700">11 days</text>
+<text class="ink" x="84" y="166" font-size="26" font-weight="700">10 days</text>
 <text class="mute" x="84" y="192" font-size="14">to departure</text>
 <rect class="card" x="360" y="130" width="280" height="76" rx="12"/>
 <rect x="360" y="130" width="6" height="76" rx="3" fill="#bf8700"/>
-<text class="ink" x="384" y="166" font-size="26" font-weight="700">6</text>
+<text class="ink" x="384" y="166" font-size="26" font-weight="700">12</text>
 <text class="mute" x="384" y="192" font-size="14">due in the next 7 days</text>
 <rect class="card" x="660" y="130" width="280" height="76" rx="12"/>
 <rect x="660" y="130" width="6" height="76" rx="3" fill="#cf222e"/>
-<text class="ink" x="684" y="166" font-size="26" font-weight="700">1</text>
+<text class="ink" x="684" y="166" font-size="26" font-weight="700">2</text>
 <text class="mute" x="684" y="192" font-size="14">overdue</text>
 <text class="ink" x="60" y="250" font-size="19" font-weight="700">Route</text>
 <line class="line" x1="255" y1="274" x2="255" y2="370" stroke-dasharray="3 5"/>
@@ -48,9 +48,9 @@
 <text class="ink" x="838" y="386" font-size="13" text-anchor="middle">NYE</text>
 <line x1="1111" y1="292" x2="1111" y2="344" stroke="#cf222e" stroke-width="2.5" stroke-dasharray="5 4"/>
 <text x="1105" y="286" font-size="12" fill="#cf222e" text-anchor="end">visa limit 28 Jan</text>
-<line x1="138" y1="270" x2="138" y2="344" stroke="#cf222e" stroke-width="3"/>
-<circle cx="138" cy="270" r="5" fill="#cf222e"/>
-<text x="147" y="274" font-size="13" font-weight="700" fill="#cf222e">today</text>
+<line x1="148" y1="270" x2="148" y2="344" stroke="#cf222e" stroke-width="3"/>
+<circle cx="148" cy="270" r="5" fill="#cf222e"/>
+<text x="157" y="274" font-size="13" font-weight="700" fill="#cf222e">today</text>
 <text class="ink" x="60" y="430" font-size="19" font-weight="700">Phases</text>
 <rect class="card" x="60" y="448" width="255" height="118" rx="12"/>
 <text class="ink" x="78" y="480" font-size="16" font-weight="700">1 · This week</text>
@@ -80,8 +80,8 @@
 <circle cx="67" cy="635" r="7" fill="#cf222e"/>
 <text class="mute" x="84" y="640" font-size="14" font-weight="600">LATE 15 Oct</text>
 <text class="ink" x="164" y="640" font-size="15">#1 Rio stay booked: 27 Dec to 20 Jan, Botafog…</text>
-<circle cx="617" cy="635" r="7" fill="#bf8700"/>
-<text class="mute" x="634" y="640" font-size="14" font-weight="600">20 Oct</text>
+<circle cx="617" cy="635" r="7" fill="#cf222e"/>
+<text class="mute" x="634" y="640" font-size="14" font-weight="600">LATE 20 Oct</text>
 <text class="ink" x="714" y="640" font-size="15">#7 Travel insurance bought (30 Oct to 21 Jan)</text>
 <circle cx="67" cy="675" r="7" fill="#bf8700"/>
 <text class="mute" x="84" y="680" font-size="14" font-weight="600">21 Oct</text>
