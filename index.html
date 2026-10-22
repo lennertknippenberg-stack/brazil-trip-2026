@@ -132,7 +132,7 @@ async function gh(method, path, body) {
 async function load() {
   try {
     const [iss, ms] = await Promise.all([gh("GET", "/issues?state=all&per_page=100"), gh("GET", "/milestones?state=all&per_page=100")]);
-    issues = iss.filter(i => !i.pull_request);
+    issues = iss.filter(i => !i.pull_request && i.state_reason !== "not_planned");
     milestones = ms.sort((a, b) => (a.due_on || "").localeCompare(b.due_on || ""));
     render();
   } catch (e) {

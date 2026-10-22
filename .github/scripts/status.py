@@ -39,7 +39,7 @@ def all_issues():
     out, page = [], 1
     while True:
         batch = call("GET", f"/issues?state=all&per_page=100&page={page}")
-        out += [i for i in batch if "pull_request" not in i]
+        out += [i for i in batch if "pull_request" not in i and i.get("state_reason") != "not_planned"]
         if len(batch) < 100:
             return out
         page += 1
@@ -85,7 +85,7 @@ def render_svg(today, done, total, overdue_n, week_n, milestones, next_items):
            f'<rect class="bg" width="{W}" height="{H}" rx="16"/>']
     # header + ring
     out += ['<text class="ink" x="60" y="70" font-size="34" font-weight="700">Brazil Work Trip</text>',
-            '<text class="mute" x="60" y="102" font-size="17">Medellín → Florianópolis → Rio de Janeiro → Brussels · 31 Oct 2026 – Jan 2027</text>']
+            '<text class="mute" x="60" y="102" font-size="17">Medellín → Florianópolis → Balneário Camboriú → Curitiba → Brussels · 31 Oct 2026 – mid-Jan 2027</text>']
     cx, cy, r = 1075, 92, 52
     circ = 2 * 3.14159 * r
     out += [f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke-width="14" class="line" stroke="#d0d7de"/>',
@@ -113,15 +113,16 @@ def render_svg(today, done, total, overdue_n, week_n, milestones, next_items):
         out += [f'<line class="line" x1="{x(m):.0f}" y1="{ty - 26}" x2="{x(m):.0f}" y2="{ty + 70}" stroke-dasharray="3 5"/>',
                 f'<text class="mute" x="{x(m) + 6:.0f}" y="{ty - 14}" font-size="13">{label}</text>']
     segs = [(dt.date(2026, 10, 12), dt.date(2026, 10, 31), "Medellín · prep", "#8250df"),
-            (dt.date(2026, 10, 31), dt.date(2026, 12, 27), "Florianópolis · work base", "#1a7f37"),
-            (dt.date(2026, 12, 27), dt.date(2027, 1, 20), "Rio", "#bf8700"),
-            (dt.date(2027, 1, 20), dt.date(2027, 1, 31), "Home", "#0969da")]
+            (dt.date(2026, 10, 31), dt.date(2026, 11, 30), "Florianópolis · Ingleses", "#1a7f37"),
+            (dt.date(2026, 11, 30), dt.date(2026, 12, 7), "BC", "#bf8700"),
+            (dt.date(2026, 12, 7), dt.date(2027, 1, 15), "Curitiba · work base", "#0969da"),
+            (dt.date(2027, 1, 15), dt.date(2027, 1, 31), "Home", "#57606a")]
     for a, b, label, col in segs:
         out += [f'<rect x="{x(a):.0f}" y="{ty}" width="{x(b) - x(a) - 3:.0f}" height="34" rx="8" fill="{col}"/>',
                 f'<text x="{x(a) + 10:.0f}" y="{ty + 22}" font-size="14" font-weight="600" fill="#ffffff">{esc(label)}</text>']
-    events = [(dt.date(2026, 10, 31), "Fly 31 Oct"), (dt.date(2026, 11, 12), "Francisco"),
-              (dt.date(2026, 11, 21), "Itajaí"), (dt.date(2026, 11, 27), "Curitiba"),
-              (dt.date(2026, 12, 27), "Rio 27 Dec"), (dt.date(2026, 12, 31), "NYE")]
+    events = [(dt.date(2026, 10, 31), "Fly 31 Oct"), (dt.date(2026, 11, 14), "Conference 12–16"),
+              (dt.date(2026, 11, 30), "North 30 Nov"), (dt.date(2026, 12, 7), "Curitiba 7 Dec"),
+              (dt.date(2026, 12, 25), "Christmas"), (dt.date(2027, 1, 14), "Home mid-Jan")]
     for k, (d, label) in enumerate(events):
         ex, ey = x(d), ty + 56 + (k % 2) * 18
         out += [f'<path d="M{ex:.0f} {ty + 40} l6 6 l-6 6 l-6 -6z" fill="#57606a"/>',
@@ -200,6 +201,10 @@ for i in issues:
 
 # --- README ------------------------------------------------------------------
 milestones = sorted(call("GET", "/milestones?state=all&per_page=100"), key=lambda m: m["due_on"] or "")
+for m in milestones:  # count only real tasks (dropped "not planned" issues are left out)
+    mine = [i for i in issues if (i.get("milestone") or {}).get("number") == m["number"]]
+    m["open_issues"] = sum(1 for i in mine if i["state"] == "open")
+    m["closed_issues"] = sum(1 for i in mine if i["state"] == "closed")
 open_issues = [i for i in issues if i["state"] == "open"]
 closed = [i for i in issues if i["state"] == "closed"]
 total, done = len(issues), len(closed)
