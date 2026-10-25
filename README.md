@@ -6,7 +6,7 @@
 
 🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
-✈️ **7 days to departure** (Sat 31 Oct)
+✈️ **6 days to departure** (Sat 31 Oct)
 
 ## ⏰ Overdue
 
@@ -14,14 +14,15 @@
 - [ ] [Share your Floripa accommodation list with Francisco](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/37) · was due Fri 23 Oct
 - [ ] [Tell Francisco the US-trip decision](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/36) · was due Fri 23 Oct
 - [ ] [Confirm US trip with Tony, then book the 31 Oct flight](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/35) · was due Fri 23 Oct
+- [ ] [Flight Medellin to Florianopolis booked (31 Oct, with a bag)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/9) · was due Sat 24 Oct
 
 ## 👉 Next up
 
-- [ ] [Flight Medellin to Florianopolis booked (31 Oct, with a bag)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/9) · **Sat 24 Oct**
 - [ ] [Decide: EMART light, Rode arm, Neewer desk pole (take, store or sell)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/33) · **Sun 25 Oct**
 - [ ] [Plug adapter bought (type N/C)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/13) · **Sun 25 Oct**
 - [ ] [Sell / give-away pile done](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/11) · **Sun 25 Oct**
 - [ ] [Book the shared place with Francisco for 12-16 Nov](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/38) · **Mon 26 Oct**
+- [ ] [Floripa stay booked: Ingleses, 31 Oct to ~30 Nov (shared 12-16 Nov)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/10) · **Mon 26 Oct**
 
 ## 📊 Phases
 
@@ -44,4 +45,4 @@
 
 **How it works:** every task is an issue. Close it when it's done. This page updates itself every morning and whenever an issue changes.
 
-📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 24 Oct 09:24 (Bogota)
+📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 25 Oct 09:55 (Bogota)
