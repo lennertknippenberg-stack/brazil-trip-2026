@@ -4,16 +4,16 @@
 <text class="ink" x="60" y="70" font-size="34" font-weight="700">Brazil Work Trip</text>
 <text class="mute" x="60" y="102" font-size="17">Medellín → Florianópolis → Balneário Camboriú → Curitiba → Brussels · 31 Oct 2026 – mid-Jan 2027</text>
 <circle cx="1075" cy="92" r="52" fill="none" stroke-width="14" class="line" stroke="#d0d7de"/>
-<circle cx="1075" cy="92" r="52" fill="none" stroke="#2da44e" stroke-width="14" stroke-linecap="round" stroke-dasharray="108.9 326.7" transform="rotate(-90 1075 92)"/>
-<text class="ink" x="1075" y="96" font-size="26" font-weight="700" text-anchor="middle">33%</text>
-<text class="mute" x="1075" y="118" font-size="13" text-anchor="middle">12/36 done</text>
+<circle cx="1075" cy="92" r="52" fill="none" stroke="#2da44e" stroke-width="14" stroke-linecap="round" stroke-dasharray="127.1 326.7" transform="rotate(-90 1075 92)"/>
+<text class="ink" x="1075" y="96" font-size="26" font-weight="700" text-anchor="middle">39%</text>
+<text class="mute" x="1075" y="118" font-size="13" text-anchor="middle">14/36 done</text>
 <rect class="card" x="60" y="130" width="280" height="76" rx="12"/>
 <rect x="60" y="130" width="6" height="76" rx="3" fill="#0969da"/>
 <text class="ink" x="84" y="166" font-size="26" font-weight="700">5 days</text>
 <text class="mute" x="84" y="192" font-size="14">to departure</text>
 <rect class="card" x="360" y="130" width="280" height="76" rx="12"/>
 <rect x="360" y="130" width="6" height="76" rx="3" fill="#bf8700"/>
-<text class="ink" x="384" y="166" font-size="26" font-weight="700">11</text>
+<text class="ink" x="384" y="166" font-size="26" font-weight="700">9</text>
 <text class="mute" x="384" y="192" font-size="14">due in the next 7 days</text>
 <rect class="card" x="660" y="130" width="280" height="76" rx="12"/>
 <rect x="660" y="130" width="6" height="76" rx="3" fill="#cf222e"/>
@@ -70,8 +70,8 @@
 <text class="ink" x="628" y="480" font-size="16" font-weight="700">3 · Before you fly</text>
 <text class="mute" x="628" y="502" font-size="13">due Fri 30 Oct · this week</text>
 <rect class="track" x="628" y="518" width="219" height="12" rx="6"/>
-<rect x="628" y="518" width="0" height="12" rx="6" fill="#bf8700"/>
-<text class="ink" x="628" y="552" font-size="15" font-weight="700">0/9</text>
+<rect x="628" y="518" width="49" height="12" rx="6" fill="#bf8700"/>
+<text class="ink" x="628" y="552" font-size="15" font-weight="700">2/9</text>
 <rect class="card" x="885" y="448" width="255" height="118" rx="12"/>
 <text class="ink" x="903" y="480" font-size="16" font-weight="700">4 · In Brazil</text>
 <text class="mute" x="903" y="502" font-size="13">due Thu 21 Jan · upcoming</text>

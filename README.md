@@ -1,10 +1,10 @@
 # 🇧🇷 Brazil Work Trip · 31 Oct 2026 → 16–21 Jan 2027
 
-<img src="status.svg" alt="Trip status: 12 of 36 done" width="100%">
+<img src="status.svg" alt="Trip status: 14 of 36 done" width="100%">
 
-**12/36 done · 33%**
+**14/36 done · 39%**
 
-🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
 ✈️ **5 days to departure** (Sat 31 Oct)
 
@@ -21,7 +21,7 @@
 - [ ] [Floripa stay booked: Ingleses, 31 Oct to ~30 Nov (shared 12-16 Nov)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/10) · **Mon 26 Oct**
 - [ ] [Store pile delivered + photos](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/20) · **Wed 28 Oct**
 - [ ] [Registered on Travellers Online](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/19) · **Wed 28 Oct**
-- [ ] [Phone theft plan](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/18) · **Wed 28 Oct**
+- [ ] [Brazil folder complete](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/17) · **Wed 28 Oct**
 
 ## 📊 Phases
 
@@ -29,16 +29,16 @@
 | --- | --- | --- | --- |
 | [1 · This week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/1) | 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 | 6/6 | Sun 18 Oct |
 | [2 · Next week](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/2) | 🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜ | 6/12 | Sun 25 Oct |
-| [3 · Before you fly](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/3) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/9 | Fri 30 Oct |
+| [3 · Before you fly](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/3) | 🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜ | 2/9 | Fri 30 Oct |
 | [4 · In Brazil](https://github.com/lennertknippenberg-stack/brazil-trip-2026/milestone/4) | ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜ | 0/9 | Thu 21 Jan |
 
 ## ✅ Recently done
 
+- [x] Bank told you'll be in Brazil
+- [x] Phone theft plan
 - [x] Plug adapter bought (type N/C)
 - [x] Tell Francisco the US-trip decision
 - [x] Confirm US trip with Tony, then book the 31 Oct flight
-- [x] Travel insurance bought (30 Oct to 21 Jan)
-- [x] Budget Brazil: set the $7,500 plan and a spending tracker
 
 ---
 
