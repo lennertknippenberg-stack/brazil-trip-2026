@@ -6,7 +6,7 @@
 
 🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
-✈️ **5 days to departure** (Sat 31 Oct)
+✈️ **4 days to departure** (Sat 31 Oct)
 
 ## ⏰ Overdue
 
@@ -14,14 +14,16 @@
 - [ ] [Flight Medellin to Florianopolis booked (31 Oct, with a bag)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/9) · was due Sat 24 Oct
 - [ ] [Decide: EMART light, Rode arm, Neewer desk pole (take, store or sell)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/33) · was due Sun 25 Oct
 - [ ] [Sell / give-away pile done](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/11) · was due Sun 25 Oct
+- [ ] [Book the shared place with Francisco for 12-16 Nov](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/38) · was due Mon 26 Oct
+- [ ] [Floripa stay booked: Ingleses, 31 Oct to ~30 Nov (shared 12-16 Nov)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/10) · was due Mon 26 Oct
 
 ## 👉 Next up
 
-- [ ] [Book the shared place with Francisco for 12-16 Nov](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/38) · **Mon 26 Oct**
-- [ ] [Floripa stay booked: Ingleses, 31 Oct to ~30 Nov (shared 12-16 Nov)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/10) · **Mon 26 Oct**
 - [ ] [Store pile delivered + photos](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/20) · **Wed 28 Oct**
 - [ ] [Registered on Travellers Online](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/19) · **Wed 28 Oct**
 - [ ] [Brazil folder complete](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/17) · **Wed 28 Oct**
+- [ ] [eSIM installed + apps (Uber, 99, iFood, ClickBus)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/15) · **Wed 28 Oct**
+- [ ] [Onward proof bought and saved offline](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/14) · **Wed 28 Oct**
 
 ## 📊 Phases
 
@@ -44,4 +46,4 @@
 
 **How it works:** every task is an issue. Close it when it's done. This page updates itself every morning and whenever an issue changes.
 
-📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 26 Oct 12:15 (Bogota)
+📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 27 Oct 11:24 (Bogota)
