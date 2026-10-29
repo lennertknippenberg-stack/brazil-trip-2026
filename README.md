@@ -6,7 +6,7 @@
 
 🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
-✈️ **3 days to departure** (Sat 31 Oct)
+✈️ **2 days to departure** (Sat 31 Oct)
 
 ## ⏰ Overdue
 
@@ -16,14 +16,19 @@
 - [ ] [Sell / give-away pile done](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/11) · was due Sun 25 Oct
 - [ ] [Book the shared place with Francisco for 12-16 Nov](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/38) · was due Mon 26 Oct
 - [ ] [Floripa stay booked: Ingleses, 31 Oct to ~30 Nov (shared 12-16 Nov)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/10) · was due Mon 26 Oct
+- [ ] [Store pile delivered + photos](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/20) · was due Wed 28 Oct
+- [ ] [Registered on Travellers Online](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/19) · was due Wed 28 Oct
+- [ ] [Brazil folder complete](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/17) · was due Wed 28 Oct
+- [ ] [eSIM installed + apps (Uber, 99, iFood, ClickBus)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/15) · was due Wed 28 Oct
+- [ ] [Onward proof bought and saved offline](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/14) · was due Wed 28 Oct
 
 ## 👉 Next up
 
-- [ ] [Store pile delivered + photos](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/20) · **Wed 28 Oct**
-- [ ] [Registered on Travellers Online](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/19) · **Wed 28 Oct**
-- [ ] [Brazil folder complete](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/17) · **Wed 28 Oct**
-- [ ] [eSIM installed + apps (Uber, 99, iFood, ClickBus)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/15) · **Wed 28 Oct**
-- [ ] [Onward proof bought and saved offline](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/14) · **Wed 28 Oct**
+- [ ] [Bag packed](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/22) · **Fri 30 Oct**
+- [ ] [Checked out: photos, meters, keys, deposit date](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/21) · **Fri 30 Oct**
+- [ ] [South tour: book or skip](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/25) · **Sun 15 Nov**
+- [ ] [Balneário Camboriú / Praia Brava stay booked (~30 Nov to 7 Dec)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/24) · **Sun 15 Nov**
+- [ ] [Curitiba stay booked (~7 Dec to mid-January)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/39) · **Fri 20 Nov**
 
 ## 📊 Phases
 
@@ -46,4 +51,4 @@
 
 **How it works:** every task is an issue. Close it when it's done. This page updates itself every morning and whenever an issue changes.
 
-📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 28 Oct 12:05 (Bogota)
+📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 29 Oct 12:23 (Bogota)
