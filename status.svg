@@ -9,15 +9,15 @@
 <text class="mute" x="1075" y="118" font-size="13" text-anchor="middle">14/36 done</text>
 <rect class="card" x="60" y="130" width="280" height="76" rx="12"/>
 <rect x="60" y="130" width="6" height="76" rx="3" fill="#0969da"/>
-<text class="ink" x="84" y="166" font-size="26" font-weight="700">1 days</text>
-<text class="mute" x="84" y="192" font-size="14">to departure</text>
+<text class="ink" x="84" y="166" font-size="26" font-weight="700">Day 1 of 90</text>
+<text class="mute" x="84" y="192" font-size="14">visa · limit 28 Jan</text>
 <rect class="card" x="360" y="130" width="280" height="76" rx="12"/>
 <rect x="360" y="130" width="6" height="76" rx="3" fill="#bf8700"/>
-<text class="ink" x="384" y="166" font-size="26" font-weight="700">2</text>
+<text class="ink" x="384" y="166" font-size="26" font-weight="700">0</text>
 <text class="mute" x="384" y="192" font-size="14">due in the next 7 days</text>
 <rect class="card" x="660" y="130" width="280" height="76" rx="12"/>
 <rect x="660" y="130" width="6" height="76" rx="3" fill="#cf222e"/>
-<text class="ink" x="684" y="166" font-size="26" font-weight="700">11</text>
+<text class="ink" x="684" y="166" font-size="26" font-weight="700">13</text>
 <text class="mute" x="684" y="192" font-size="14">overdue</text>
 <text class="ink" x="60" y="250" font-size="19" font-weight="700">Route</text>
 <line class="line" x1="255" y1="274" x2="255" y2="370" stroke-dasharray="3 5"/>
@@ -50,9 +50,9 @@
 <text class="ink" x="975" y="386" font-size="13" text-anchor="middle">Home mid-Jan</text>
 <line x1="1111" y1="292" x2="1111" y2="344" stroke="#cf222e" stroke-width="2.5" stroke-dasharray="5 4"/>
 <text x="1105" y="286" font-size="12" fill="#cf222e" text-anchor="end">visa limit 28 Jan</text>
-<line x1="235" y1="270" x2="235" y2="344" stroke="#cf222e" stroke-width="3"/>
-<circle cx="235" cy="270" r="5" fill="#cf222e"/>
-<text x="244" y="274" font-size="13" font-weight="700" fill="#cf222e">today</text>
+<line x1="245" y1="270" x2="245" y2="344" stroke="#cf222e" stroke-width="3"/>
+<circle cx="245" cy="270" r="5" fill="#cf222e"/>
+<text x="254" y="274" font-size="13" font-weight="700" fill="#cf222e">today</text>
 <text class="ink" x="60" y="430" font-size="19" font-weight="700">Phases</text>
 <rect class="card" x="60" y="448" width="255" height="118" rx="12"/>
 <text class="ink" x="78" y="480" font-size="16" font-weight="700">1 · This week</text>
@@ -68,9 +68,9 @@
 <text class="ink" x="353" y="552" font-size="15" font-weight="700">6/12</text>
 <rect class="card" x="610" y="448" width="255" height="118" rx="12"/>
 <text class="ink" x="628" y="480" font-size="16" font-weight="700">3 · Before you fly</text>
-<text class="mute" x="628" y="502" font-size="13">due Fri 30 Oct · this week</text>
+<text class="mute" x="628" y="502" font-size="13">due Fri 30 Oct · late</text>
 <rect class="track" x="628" y="518" width="219" height="12" rx="6"/>
-<rect x="628" y="518" width="49" height="12" rx="6" fill="#bf8700"/>
+<rect x="628" y="518" width="49" height="12" rx="6" fill="#cf222e"/>
 <text class="ink" x="628" y="552" font-size="15" font-weight="700">2/9</text>
 <rect class="card" x="885" y="448" width="255" height="118" rx="12"/>
 <text class="ink" x="903" y="480" font-size="16" font-weight="700">4 · In Brazil</text>
