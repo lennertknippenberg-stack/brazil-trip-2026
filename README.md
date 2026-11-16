@@ -6,7 +6,7 @@
 
 🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
-🛂 **Visa: day 16 of 90** · limit Thu 28 Jan · 74 days left
+🛂 **Visa: day 17 of 90** · limit Thu 28 Jan · 73 days left
 
 ## ⏰ Overdue
 
@@ -23,14 +23,16 @@
 - [ ] [Onward proof bought and saved offline](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/14) · was due Wed 28 Oct
 - [ ] [Bag packed](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/22) · was due Fri 30 Oct
 - [ ] [Checked out: photos, meters, keys, deposit date](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/21) · was due Fri 30 Oct
+- [ ] [South tour: book or skip](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/25) · was due Sun 15 Nov
+- [ ] [Balneário Camboriú / Praia Brava stay booked (~30 Nov to 7 Dec)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/24) · was due Sun 15 Nov
 
 ## 👉 Next up
 
-- [ ] [South tour: book or skip](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/25) · **Sun 15 Nov**
-- [ ] [Balneário Camboriú / Praia Brava stay booked (~30 Nov to 7 Dec)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/24) · **Sun 15 Nov**
 - [ ] [Curitiba stay booked (~7 Dec to mid-January)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/39) · **Fri 20 Nov**
 - [ ] [Flight home to Brussels booked (mid-January at the latest)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/26) · **Mon 30 Nov**
 - [ ] [Decide: short Rio visit before flying home? (optional)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/40) · **Tue 01 Dec**
+- [ ] [Clients told: off 24 Dec to 2 Jan](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/27) · **Thu 10 Dec**
+- [ ] [Visa check: leaving as planned](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/30) · **Sun 10 Jan**
 
 ## 📊 Phases
 
@@ -53,4 +55,4 @@
 
 **How it works:** every task is an issue. Close it when it's done. This page updates itself every morning and whenever an issue changes.
 
-📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 15 Nov 14:38 (Sao Paulo)
+📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 16 Nov 17:54 (Sao Paulo)
