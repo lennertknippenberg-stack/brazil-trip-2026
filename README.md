@@ -6,7 +6,7 @@
 
 🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
-🛂 **Visa: day 21 of 90** · limit Thu 28 Jan · 69 days left
+🛂 **Visa: day 22 of 90** · limit Thu 28 Jan · 68 days left
 
 ## ⏰ Overdue
 
@@ -25,14 +25,15 @@
 - [ ] [Checked out: photos, meters, keys, deposit date](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/21) · was due Fri 30 Oct
 - [ ] [South tour: book or skip](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/25) · was due Sun 15 Nov
 - [ ] [Balneário Camboriú / Praia Brava stay booked (~30 Nov to 7 Dec)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/24) · was due Sun 15 Nov
+- [ ] [Curitiba stay booked (~7 Dec to mid-January)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/39) · was due Fri 20 Nov
 
 ## 👉 Next up
 
-- [ ] [Curitiba stay booked (~7 Dec to mid-January)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/39) · **Fri 20 Nov**
 - [ ] [Flight home to Brussels booked (mid-January at the latest)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/26) · **Mon 30 Nov**
 - [ ] [Decide: short Rio visit before flying home? (optional)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/40) · **Tue 01 Dec**
 - [ ] [Clients told: off 24 Dec to 2 Jan](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/27) · **Thu 10 Dec**
 - [ ] [Visa check: leaving as planned](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/30) · **Sun 10 Jan**
+- [ ] [Helicopter tour (only if you do a short Rio visit)](https://github.com/lennertknippenberg-stack/brazil-trip-2026/issues/31) · **Fri 15 Jan**
 
 ## 📊 Phases
 
@@ -55,4 +56,4 @@
 
 **How it works:** every task is an issue. Close it when it's done. This page updates itself every morning and whenever an issue changes.
 
-📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 20 Nov 16:02 (Sao Paulo)
+📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 21 Nov 14:56 (Sao Paulo)
