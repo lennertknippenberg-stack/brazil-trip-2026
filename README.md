@@ -6,7 +6,7 @@
 
 🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
 
-🛂 **Visa: day 24 of 90** · limit Thu 28 Jan · 66 days left
+🛂 **Visa: day 25 of 90** · limit Thu 28 Jan · 65 days left
 
 ## ⏰ Overdue
 
@@ -56,4 +56,4 @@
 
 **How it works:** every task is an issue. Close it when it's done. This page updates itself every morning and whenever an issue changes.
 
-📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 23 Nov 19:31 (Sao Paulo)
+📄 [Master plan (details, budget, stays)](https://claude.ai/code/artifact/34968c96-3842-4b4a-8ebb-d26ef0847290) · 📅 BRAZIL calendar for times · updated 24 Nov 18:04 (Sao Paulo)
